@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Running unit tests
+        continue-on-error: true
         run: |
           echo "Running tests..."
       - name: Failing tests
