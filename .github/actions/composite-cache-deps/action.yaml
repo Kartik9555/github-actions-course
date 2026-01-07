@@ -32,4 +32,4 @@ runs:
       shell: bash
       if: ${{ steps.cache.outputs.cache-hit != 'true' }}
       working-directory: ${{ inputs.working-dir }}
-      run: ${{ inputs.target-env == 'dev' && 'npm ci' || 'npm ci --omit=dev' }}}
+      run: ${{ inputs.target-env == 'dev' && 'npm ci' || 'npm ci --omit=dev' }}
