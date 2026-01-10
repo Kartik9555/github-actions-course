@@ -29,7 +29,7 @@ async function run() {
     const workingDirectory = core.getInput('working-directory', { required: true });
     const ghToken = core.getInput('gh-token', { required: true });
     const debug = core.getBooleanInput('debug');
-    const logger = setupLogger(debug, prefix: '[js-dependency-update]')
+    const logger = setupLogger({ debug, prefix: '[js-dependency-update]' });
 
     const commonExecOpts = {
         cwd: workingDirectory,
