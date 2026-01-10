@@ -10,7 +10,7 @@ const setupGit = async() => {
 const validateBranchName = ({ branchName }) => /[a-zA-Z0_\-\.\/]+$/.test(branchName);
 const validateDirectoryName = ({ dirName }) => /[a-zA-Z0_\-\/]+$/.test(dirName);
 
-const setupLogger = ({ debug, prefix} = { debug: false, prefix: ''}) => ({
+const setupLogger = ({ debug, prefix } = { debug: false, prefix: '' }) => ({
     debug: (message) => {
         if(debug) {
             core.info(`[DEBUG] - ${prefix}${prefix ? ' : ' : ''}${message}`);
