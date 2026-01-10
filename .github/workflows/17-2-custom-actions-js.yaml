@@ -15,6 +15,10 @@ on:
         description: "The working directory of the project to check for dependency updates"
         default: 17-custom-actions/react-app
         type: string
+      debug:
+        type: boolean
+        default: false
+        description: "Run the workflow in debug mode"
 
 run-name: 17 - 2 - Custom Actions - JS | BB - ${{ inputs.base-branch }} TB - ${{ inputs.target-branch }} WD - ${{ inputs.working-directory }}
 
@@ -32,6 +36,7 @@ jobs:
         uses: ./.github/actions/js-dependency-update
         with:
          base-branch: ${{ inputs.base-branch }}
-         target-branch: ${{ inputs.target-branch }}
+         head-branch: ${{ inputs.target-branch }}
          working-directory: ${{ inputs.working-directory }}
          gh-token: ${{ secrets.GITHUB_TOKEN }}
+         debug: ${{ inputs.debug }}
