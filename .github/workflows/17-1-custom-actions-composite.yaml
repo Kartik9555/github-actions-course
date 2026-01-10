@@ -25,10 +25,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Node and NPM Dependencies
+        id: setup-deps
         uses: ./.github/actions/composite-cache-deps
         with:
          working-dir: ${{ env.working-directory }}
          target-env: ${{ inputs.target-env }}
+      - name: Print setup deps output
+        run: "Installed dependencies: ${{ steps.setup-deps.outputs.installed-deps }}"
       - name: Test
         run: npm run test
       - name: Build
