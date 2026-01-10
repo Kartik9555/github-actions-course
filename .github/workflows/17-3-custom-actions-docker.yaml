@@ -6,6 +6,18 @@ on:
       url:
         description: "URL to ping"
         default: 'https://www.google.com'
+        type: choice
+        options:
+          - 'https://www.google.com'
+          - 'https://www.abxzy.com'
+          - 'invalid-aajhsdsldhlhl'
+      max_trials:
+        description: 'Maximum trials until action fails'
+        default: '10'
+        type: string
+      delay:
+        description: 'Delay in seconds between trials'
+        default: '5'
         type: string
 
 run-name: 17 - 3 - Custom Actions - Docker | URL - ${{ inputs.url }}
@@ -20,3 +32,5 @@ jobs:
         uses: ./.github/actions/docker-ping-url
         with:
          url: ${{ inputs.url }}
+         delay: ${{ inputs.delay }}
+         max_trials: ${{ inputs.max_trials }}
