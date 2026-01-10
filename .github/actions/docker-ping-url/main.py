@@ -4,7 +4,7 @@ import time
 
 def set_output(file_path, key, value):
     with open(file_path, "a") as file:
-        print(f"{key}: {value}", file=file)
+        print(f"{key}={value}", file=file)
 
 def ping_url(website_url, delay, max_trials):
     trials = 0
