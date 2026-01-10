@@ -68,6 +68,7 @@ async function run() {
 
     if(gitStatus.stdout.length > 0) {
         logger.debug('There are updates available!');
+        core.setOutput('updates-available', true);
 
         logger.debug('Setting up git');
         await setupGit();
@@ -109,6 +110,7 @@ async function run() {
         }
     } else {
         logger.info('No updates at this point in time.');
+        core.setOutput('updates-available', false);
     }
 }
 
