@@ -11,6 +11,6 @@ jobs:
   e2e-tests:
     needs:
       - deploy
-    uses: Kartik9555/github-actions-course-example-e2e/.github/workflows/e2e.yaml@c68320f527800e50e26dcfe0cc9f3a5da11be868
+    uses: Kartik9555/github-actions-course-example-e2e/.github/workflows/e2e.yaml@8d68bb8bd4ff2bc117fdc2b3678f9733411b743c
     secrets:
       access-token: ${{ secrets.GH_TOKEN }}
