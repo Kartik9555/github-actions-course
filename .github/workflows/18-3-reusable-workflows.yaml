@@ -6,11 +6,11 @@ on:
 jobs:
   deploy:
     uses: ./.github/workflows/18-1-reusable-workflows.yaml
-    secrets:
-      access-token: ${{ secrets.GH_TOKEN }}
     with:
      target-directory: .
   e2e-tests:
     needs:
       - deploy
     uses: Kartik9555/github-actions-course-example-e2e/.github/workflows/e2e.yaml@c68320f527800e50e26dcfe0cc9f3a5da11be868
+    secrets:
+      access-token: ${{ secrets.GH_TOKEN }}
