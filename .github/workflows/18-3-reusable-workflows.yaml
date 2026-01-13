@@ -4,6 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  mandatory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make the repo private for the workflow to run
+        run: |
+          echo "Check the step name"
   deploy:
     uses: ./.github/workflows/18-1-reusable-workflows.yaml
     with:
