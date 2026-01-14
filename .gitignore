@@ -1,4 +1,4 @@
 node_modules
 .idea
-/.github/actions/**/node_modules
+!.github/actions/**/node_modules
 venv/
