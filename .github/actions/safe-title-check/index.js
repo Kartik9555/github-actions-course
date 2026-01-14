@@ -6,7 +6,7 @@ async function run() {
     if(prTitle.startsWith("feat")){
         core.info("PR is a feature");
     } else {
-        core.info("PR is not a feature")
+        core.setFailed("PR is not a feature");
     }
 }
 
